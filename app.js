@@ -33,7 +33,7 @@ app.post('/send-email', (req, res) => {
   // Email options
   const mailOptions = {
     from: email,
-    to: 'wisgeorge.wg@gmail.com', // replace with recipient email
+    to: 'jasonvicsnodgrass@gmail.com', // replace with recipient email
     subject: 'New RSVP Confirmation',
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`
   };
