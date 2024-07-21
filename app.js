@@ -38,12 +38,28 @@ app.post('/send-email', (req, res) => {
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`
   };
 
+  // Email options for the guest
+  const mailOptionsGuest = {
+    from: 'jasonvicsnodgrass@gmail.com',
+    to: email,
+    subject: 'RSVP Confirmation',
+    text: `Hello ${name},\n\nYou have confirmed your attendance to our wedding.\nSave the date and come share in our happiness.\n\nThank you.`
+  };
+
   // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return res.status(500).json({ status: 'error', message: error.toString() });
     }
-    res.json({ status: 'success', message: 'Email sent successfully!' });
+
+    // Send the email to the guest
+    transporter.sendMail(mailOptionsGuest, (error, info) => {
+      if (error) {
+        return res.status(500).json({ status: 'error', message: error.toString() });
+      }
+
+      res.json({ status: 'success', message: 'Emails sent successfully!' });
+    });
   });
 });
 

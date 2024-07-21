@@ -367,6 +367,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
 }
 #fh5co-counter .fh5co-heading h2,
+.fh5co-cover h5, .fh5co-cover h4,
 #fh5co-event .fh5co-heading h2 {
   color: #fff;
 }
@@ -842,7 +843,7 @@ form label {
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
   margin-bottom: 0px;
-  font-size: 100px;
+  font-size: 90px;
   line-height: 1.5;
   font-family: "Sacramento", Arial, serif;
 }
